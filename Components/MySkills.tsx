@@ -37,42 +37,12 @@ const MySkills = () => {
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (scrollContainer) {
-      scrollContainer.addEventListener("scroll", updateActiveIndex);
-      return () => scrollContainer.removeEventListener("scroll", updateActiveIndex);
+      scrollContainer.addEventListener('scroll', updateActiveIndex);
+      return () => scrollContainer.removeEventListener('scroll', updateActiveIndex);
     }
   }, []);
 
-  const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const { scrollLeft, clientWidth } = scrollRef.current;
-      const scrollAmount = clientWidth;
-      const newScrollLeft = direction === "left" ? scrollLeft - scrollAmount : scrollLeft + scrollAmount;
-
-      scrollRef.current.scrollTo({
-        left: newScrollLeft,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const scrollToDot = (index: number) => {
-    if (scrollRef.current) {
-      const scrollAmount = scrollRef.current.clientWidth * index;
-      scrollRef.current.scrollTo({
-        left: scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  return (
-    <div className="bg-[rgba(18,17,33,0.9)] pt-16 md:pt-32 pb-20 text-white">
-      <p className="text-3xl md:text-4xl font-bold text-center mb-10">
-        My <span className="text-[#357BC9]">Skills</span>
-      </p>
-      {/* Content remains unchanged */}
-    </div>
-  );
+  return <div>My Skills Component</div>;
 };
 
 export default MySkills;
