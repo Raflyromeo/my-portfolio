@@ -98,7 +98,8 @@ const skills: Skill[] = [
 ];
 
 const MySkills: React.FC = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  // Explicitly typing the scrollRef as HTMLDivElement
+  const scrollRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const updateActiveIndex = () => {
