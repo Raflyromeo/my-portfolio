@@ -29,51 +29,47 @@ const HomePage: React.FC = () => {
     });
   },[]);
 
+  const handleNavClick = (id: string) => {
+    const section = document.querySelector(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      toggleNav(); // Tutup menu setelah klik
+    }
+  };
+  
   return (
     <div className="overflow-x-hidden">
       {/* Navbar */}
       <Nav openNav={toggleNav} closeNav={toggleNav} nav={nav} />
-      <MobileNav nav={nav} closeNav={toggleNav} />
-
-      {/* Hero Section */}
+      <MobileNav nav={nav} closeNav={toggleNav} handleNavClick={handleNavClick} />
+  
+      {/* Sections */}
       <section id="home">
         <Home />
       </section>
-
-      {/* About Section */}
       <section id="about">
         <About />
       </section>
-
-      {/* My Skills */}
       <section id="my-skills">
         <MySkills />
       </section>
-
-      {/* Experience */}
       <section id="experience">
         <Experience />
       </section>
-
-      {/* Project */}
       <section id="project">
         <Project />
       </section>
-
-      {/* Blog */}
       <section id="blog">
         <Blog />
       </section>
-
-      {/* Contact Me */}
       <section id="contact">
         <Contact />
       </section>
-
+  
       {/* Footer */}
       <Footer />
     </div>
-  );
+  );  
 };
 
 export default HomePage;
