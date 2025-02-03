@@ -52,22 +52,29 @@ const Blog = () => {
       <h1 className="text-4xl font-bold text-center">
         My <span className="text-[#357BC9]">Blog</span>
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-16 gap-8 w-[80%] mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-16 gap-8 w-full md:w-[80%] mx-auto">
         {blogs.map((blog, index) => (
           <div
             key={index}
             className="bg-[#1c2533] p-5 rounded-2xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-[#1c2533]"
           >
+            {/* Gambar Blog dengan fallback alt text */}
             <div
               className="w-full h-64 bg-cover bg-center rounded-xl transition duration-300 hover:brightness-90"
               style={{ backgroundImage: `url(${blog.image})` }}
+              aria-label={`Image for ${blog.title}`}
+              alt={blog.title || "Blog Image"}
             ></div>
+
+            {/* Konten Blog */}
             <div className="mt-5">
               <span className="text-gray-400 text-sm">{blog.date}</span>
               <h2 className="text-xl font-semibold mt-2 hover:text-[#357BC9] transition duration-300">
                 {blog.title}
               </h2>
               <p className="text-gray-400 mt-2">By {blog.author}</p>
+
+              {/* Tombol "Read More" */}
               <a
                 href={blog.url}
                 target="_blank"
