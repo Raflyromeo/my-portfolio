@@ -35,7 +35,7 @@ const About = () => {
             Passionate Developer | <span className="text-[#357BC9]">UI/UX & Front-End Enthusiast</span> | Tech Explorer
           </h2>
           <p data-aos="fade-up" className="text-base sm:text-lg text-slate-300 mt-6 leading-relaxed text-justify">
-            <strong>Hello there!</strong> 👋 I'm <strong>Muhammad Rafly Romeo Nasution</strong>, an undergraduate student at <strong>Gunadarma University</strong>, majoring in Information Systems. As a staff member of the <strong>IT Development Bureau</strong>, I love creating elegant and efficient solutions through code.
+            <strong>Hello there!</strong> 👋 I am <strong>Muhammad Rafly Romeo Nasution</strong>, an undergraduate student at <strong>Gunadarma University</strong>, majoring in Information Systems. As a staff member of the <strong>IT Development Bureau</strong>, I love creating elegant and efficient solutions through code.
           </p>
           
           <p data-aos="fade-up" className="text-base sm:text-lg text-slate-300 mt-4 leading-relaxed text-justify">
@@ -52,11 +52,11 @@ const About = () => {
           </ul>
 
           <p data-aos="fade-up" className="text-base sm:text-lg text-slate-300 mt-6 leading-relaxed text-justify">
-            Currently, I’m diving deeper into <strong>UI/UX and front-end development</strong> to craft more intuitive and responsive digital experiences.
+            Currently, I am diving deeper into <strong>UI/UX and front-end development</strong> to craft more intuitive and responsive digital experiences.
           </p>
 
           <p data-aos="fade-up" className="text-base sm:text-lg text-slate-300 mt-4 leading-relaxed text-justify">
-            I'm a <strong>quick learner</strong> who thrives in collaborative environments. I believe that teamwork and innovation drive meaningful progress.
+            I am a <strong>quick learner</strong> who thrives in collaborative environments. I believe that teamwork and innovation drive meaningful progress.
           </p>
 
           <div data-aos="fade-up" className="flex justify-center lg:justify-start mt-8">
