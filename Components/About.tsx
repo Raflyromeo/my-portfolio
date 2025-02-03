@@ -19,7 +19,8 @@ const About = () => {
             <Image 
               src="/images/Romeo.jpg"
               alt="user" 
-              layout="fill" 
+              width={400} 
+              height={400}
               objectFit="cover"
               className="object-cover rounded-full"
             />
