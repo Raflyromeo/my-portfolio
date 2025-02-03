@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { FaExternalLinkAlt } from "react-icons/fa";  // Import FaExternalLinkAlt icon
+import { FaExternalLinkAlt } from "react-icons/fa"; // Import FaExternalLinkAlt icon
 
 const projects = [
   {
@@ -39,17 +39,24 @@ const Project = () => {
   return (
     <div className="bg-[rgba(18,17,33,0.9)] pt-16 md:pt-32 pb-20 text-white">
       <h1 className="heading">
-        My <span className="text-[#357BC9]"> Project</span>
+        My <span className="text-[#357BC9]">Project</span>
       </h1>
       <div className="w-[80%] pt-[2rem] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2rem]">
         {projects.map((project) => (
           <div key={project.id} className="relative group">
-            <div className="transform cursor-pointer hover:-translate-y-6 transition-all duration-200 relative w-[100%] h-[200px] md:h-[300px]">
-              <Image src={project.image} alt={project.title} layout="fill" className="object-cover rounded-lg" />
+            <div className="transform cursor-pointer hover:-translate-y-6 transition-all duration-200 relative w-full h-[200px] md:h-[300px]">
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={500} // Set width to control the size
+                height={300} // Set height to maintain aspect ratio
+                className="object-cover rounded-lg"
+                priority // Ensure the image is prioritized in loading
+              />
               <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
                 <h2 className="text-lg font-semibold text-white mb-2">{project.title}</h2>
                 <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-[#ffff] text-xl">
-                  <FaExternalLinkAlt /> {/* Replaced the chain emoji with FaExternalLinkAlt */}
+                  <FaExternalLinkAlt />
                 </a>
               </div>
             </div>

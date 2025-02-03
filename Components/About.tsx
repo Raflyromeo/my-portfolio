@@ -19,9 +19,9 @@ const About = () => {
             <Image 
               src="/images/Romeo.jpg"
               alt="user" 
-              width={400} 
-              height={400}
-              objectFit="cover"
+              fill
+              sizes="(max-width: 768px) 200px, (max-width: 1024px) 300px, 400px"
+              priority // For images that appear above the fold
               className="object-cover rounded-full"
             />
           </div>
@@ -61,7 +61,10 @@ const About = () => {
           </p>
 
           <div data-aos="fade-up" className="flex justify-center lg:justify-start mt-8">
-            <button className="group px-6 py-3 text-lg font-bold uppercase bg-[#FFFFF4] text-[#17A86B] flex items-center space-x-2 rounded-lg transition-all duration-200 shadow-none hover:bg-[#17A86B] hover:text-white hover:shadow-lg hover:shadow-green-300">
+            <button 
+              aria-label="Explore My CV" 
+              className="group px-6 py-3 text-lg font-bold uppercase bg-[#FFFFF4] text-[#17A86B] flex items-center space-x-2 rounded-lg transition-all duration-200 shadow-none hover:bg-[#17A86B] hover:text-white hover:shadow-lg hover:shadow-green-300"
+            >
               <p>Explore My CV</p>
               <ArrowDownCircleIcon className="w-6 h-6 text-[#17A86B] group-hover:text-white" />
             </button>

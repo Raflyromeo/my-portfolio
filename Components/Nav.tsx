@@ -13,21 +13,22 @@ interface Props {
 const Nav = ({ openNav, closeNav, nav }: Props) => {
   const [scrolling, setScrolling] = useState(false);
 
+  // Handle scroll event to change navbar style
   const handleScroll = () => {
-    if (window.scrollY > 50) {
-      setScrolling(true);
-    } else {
-      setScrolling(false);
-    }
+    setScrolling(window.scrollY > 50); // Toggle scrolling state based on window scroll position
   };
 
   useEffect(() => {
+    // Add scroll event listener on mount
     window.addEventListener("scroll", handleScroll);
+
+    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, []); // Empty dependency array ensures this runs once on mount/unmount
 
+  // Smooth scrolling to sections on click
   const handleNavClick = (id: string) => {
     const section = document.querySelector(id);
     if (section) {
@@ -45,10 +46,11 @@ const Nav = ({ openNav, closeNav, nav }: Props) => {
         <Image
           src="/images/myportofolio.png"
           alt="My Portfolio"
-          width={200}
-          height={80}
-          className="flex-[0.1] cursor-pointer h-auto max-h-full"
-          onClick={() => handleNavClick("#home")} // Event onClick
+          width={200} // Fixed width
+          height={80} // Fixed height
+          className="flex-[0.1] cursor-pointer" // Removed w-auto and h-auto to maintain aspect ratio
+          onClick={() => handleNavClick("#home")}
+          priority // Add this to prioritize loading
         />
         <div className="hidden md:flex space-x-6">
           {["home", "about", "my-skills", "experience", "project", "blog", "contact"].map((section) => (
@@ -91,9 +93,7 @@ const Nav = ({ openNav, closeNav, nav }: Props) => {
       </div>
 
       {/* Conditional rendering of MobileNav */}
-      <MobileNav nav={nav} handleNavClick={handleNavClick} closeNav={function (): void {
-        throw new Error("Function not implemented.");
-      } } />
+      <MobileNav nav={nav} handleNavClick={handleNavClick} closeNav={closeNav} />
     </div>
   );
 };
