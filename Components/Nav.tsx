@@ -14,7 +14,11 @@ const Nav = ({ openNav, closeNav, nav }: Props) => {
   const [scrolling, setScrolling] = useState(false);
 
   const handleScroll = () => {
-    setScrolling(window.scrollY > 50);
+    if (window.scrollY > 50) {
+      setScrolling(true);
+    } else {
+      setScrolling(false);
+    }
   };
 
   useEffect(() => {
@@ -28,7 +32,6 @@ const Nav = ({ openNav, closeNav, nav }: Props) => {
     const section = document.querySelector(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
-      closeNav();
     }
   };
 
@@ -39,14 +42,14 @@ const Nav = ({ openNav, closeNav, nav }: Props) => {
       }`}
     >
       <div className="flex items-center justify-between w-[80%] mx-auto h-full relative">
-        <Image
-          src="/images/myportofolio.png"
-          alt="My Portfolio"
-          width={200}
-          height={80}
-          className="flex-[0.1] cursor-pointer h-auto max-h-full"
-          onClick={() => handleNavClick("#home")}
-        />
+      <Image
+        src="/images/myportofolio.png"
+        alt="My Portfolio"
+        width={200}
+        height={80}
+        className="flex-[0.1] cursor-pointer h-auto max-h-full"
+        onClick={() => handleNavClick("#home")} // Tambahkan event onClick
+      />
         <div className="hidden md:flex space-x-6">
           {["home", "about", "my-skills", "experience", "project", "blog", "contact"].map((section) => (
             <button key={section} onClick={() => handleNavClick(`#${section}`)} className="nav-link">
@@ -82,7 +85,7 @@ const Nav = ({ openNav, closeNav, nav }: Props) => {
           </AnimatePresence>
         </div>
       </div>
-      <MobileNav nav={nav} handleNavClick={handleNavClick} closeNav={closeNav} />
+      <MobileNav nav={nav} handleNavClick={handleNavClick} />
     </div>
   );
 };
