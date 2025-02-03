@@ -1,6 +1,5 @@
 import React from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import Image from "next/image";
 
 const blogs = [
   {
