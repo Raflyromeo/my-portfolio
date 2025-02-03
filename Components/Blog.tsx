@@ -63,7 +63,6 @@ const Blog = () => {
               className="w-full h-64 bg-cover bg-center rounded-xl transition duration-300 hover:brightness-90"
               style={{ backgroundImage: `url(${blog.image})` }}
               aria-label={`Image for ${blog.title}`}
-              alt={blog.title || "Blog Image"}
             ></div>
 
             {/* Konten Blog */}
