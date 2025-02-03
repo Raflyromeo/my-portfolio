@@ -2,7 +2,7 @@ import About from "@/Components/About";
 import Blog from "@/Components/Blog";
 import Experience from "@/Components/Experience";
 import Footer from "@/Components/Footer";
-import Hero from "@/Components/Home";
+import Home from "@/Components/Home";
 import MobileNav from "@/Components/MobileNav";
 import MySkills from "@/Components/MySkills";
 import Nav from "@/Components/Nav";
