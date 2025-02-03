@@ -4,7 +4,7 @@ const Contact = () => {
   const [formStatus, setFormStatus] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
@@ -12,7 +12,7 @@ const Contact = () => {
     setTimeout(() => {
       setFormStatus('success');
       setIsSubmitting(false);
-      e.target.reset();
+      e.currentTarget.reset();
     }, 1000);
   };
 
