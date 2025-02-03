@@ -27,12 +27,10 @@ const Home = () => {
             data-aos="zoom-in"
             className="w-[70%] max-w-[150px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px] aspect-square relative overflow-hidden rounded-full shadow-lg shadow-gray-500"
           >
-            <Image
+            <Image 
               src="/images/RomeoN.jpg"
-              alt="user"
-              fill
-              sizes="(max-width: 768px) 100px, (max-width: 1024px) 150px, 200px"
-              priority // Add priority if it's above the fold
+              alt="user" 
+              layout="fill" 
               className="object-cover rounded-full"
             />
           </div>
@@ -63,11 +61,13 @@ const Home = () => {
       </div>
 
       {/* Tombol Scroll Down */}
-      <div className="absolute bottom-10 w-full text-center">
-        <button onClick={handleScrollDown} className="text-white text-3xl">
-          <FaArrowDown />
-        </button>
-      </div>
+      <button
+        onClick={handleScrollDown}
+        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white"
+      >
+        <FaArrowDown className="w-6 h-6 sm:w-7 sm:h-7 animate-bounce mb-2" />
+        <span className="text-xs sm:text-sm font-light">Scroll Down</span>
+      </button>
     </div>
   );
 };
