@@ -23,7 +23,10 @@ const Home = () => {
         
         {/* Bagian Gambar (Order 1 di Mobile, Order 2 di Desktop) */}
         <div className="order-first lg:order-2 flex justify-center">
-          <div data-aos="zoom-in" className="w-[70%] max-w-[150px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px] aspect-square relative overflow-hidden rounded-full shadow-lg shadow-gray-500">
+          <div
+            data-aos="zoom-in"
+            className="w-[70%] max-w-[150px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px] aspect-square relative overflow-hidden rounded-full shadow-lg shadow-gray-500"
+          >
             <Image 
               src="/images/RomeoN.jpg"
               alt="user" 
@@ -35,11 +38,17 @@ const Home = () => {
 
         {/* Bagian Teks (Order 2 di Mobile, Order 1 di Desktop) */}
         <div className="order-last lg:order-1">
-          <h1 data-aos="fade-up" className="text-[22px] sm:text-[28px] md:text-[40px] lg:text-[50px] font-extrabold leading-tight text-white">
+          <h1
+            data-aos="fade-up"
+            className="text-[22px] sm:text-[28px] md:text-[40px] lg:text-[50px] font-extrabold leading-tight text-white"
+          >
             <span className="text-white">HI, I AM</span> <span className="text-[#357BC9]">MUHAMMAD RAFLY ROMEO NASUTION!</span> <span className="text-white">AND I AM A</span>
           </h1>
           <TextEffect />
-          <p data-aos="fade-up" className="mt-3 text-sm sm:text-base md:text-lg text-[#ffffffb3]">
+          <p
+            data-aos="fade-up"
+            className="mt-3 text-sm sm:text-base md:text-lg text-[#ffffffb3]"
+          >
             I am an undergraduate student in Information Systems at Gunadarma University, currently serving as a staff member in the Information Technology Development Bureau. I have a deep interest and continue to grow in the fields of web development, UI/UX design, and database management.
           </p>
           <div data-aos="fade-up" className="mt-5 flex justify-center sm:justify-start">
