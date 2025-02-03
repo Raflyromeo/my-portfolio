@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { FaPython, FaHtml5, FaCss3Alt, FaJsSquare, FaDatabase } from "react-icons/fa";
+import Image from 'next/image'; // Import Image for optimization
 
 type Skill = {
   name: string;
@@ -97,7 +98,6 @@ const skills: Skill[] = [
 ];
 
 const MySkills: React.FC = () => {
-  // Rest of the component code remains the same
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -154,6 +154,7 @@ const MySkills: React.FC = () => {
         <button
           className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10"
           onClick={() => scroll("left")}
+          aria-label="Scroll left"
         >
           &#8592;
         </button>
@@ -167,7 +168,11 @@ const MySkills: React.FC = () => {
               key={index}
               className="flex-none w-full snap-center max-w-sm bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center text-center"
             >
-              {skill.icon ? skill.icon : <img src={skill.image} alt={skill.name} className="w-16 h-16" />}
+              {skill.icon ? (
+                skill.icon
+              ) : (
+                <Image src={skill.image!} alt={skill.name} width={64} height={64} className="w-16 h-16" />
+              )}
               <h3 className="text-xl font-bold mt-4">{skill.name}</h3>
               <p className="text-sm text-gray-300 mt-2">{skill.description}</p>
             </div>
@@ -177,6 +182,7 @@ const MySkills: React.FC = () => {
         <button
           className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10"
           onClick={() => scroll("right")}
+          aria-label="Scroll right"
         >
           &#8594;
         </button>
@@ -200,7 +206,11 @@ const MySkills: React.FC = () => {
             key={index}
             className="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center text-center transform transition-all duration-300 hover:scale-105 md:hover:scale-110"
           >
-            {skill.icon ? skill.icon : <img src={skill.image} alt={skill.name} className="w-16 h-16" />}
+            {skill.icon ? (
+              skill.icon
+            ) : (
+              <Image src={skill.image!} alt={skill.name} width={64} height={64} className="w-16 h-16" />
+            )}
             <h3 className="text-xl font-bold mt-4">{skill.name}</h3>
             <p className="text-sm text-gray-300 mt-2">{skill.description}</p>
           </div>
