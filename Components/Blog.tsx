@@ -33,14 +33,14 @@ const blogs = [
   {
     title: "Blog Title Placeholder",
     url: "#",
-    image: "/path-to-placeholder1.jpg",
+    image: "/images/NotAvailable.jpg",
     author: "Unknown",
     date: "TBD",
   },
   {
     title: "Blog Title Placeholder",
     url: "#",
-    image: "/path-to-placeholder2.jpg",
+    image: "/images/NotAvailable.jpg",
     author: "Unknown",
     date: "TBD",
   },
