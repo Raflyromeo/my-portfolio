@@ -36,7 +36,7 @@ const Home = () => {
         {/* Bagian Teks (Order 2 di Mobile, Order 1 di Desktop) */}
         <div className="order-last lg:order-1">
           <h1 data-aos="fade-up" className="text-[22px] sm:text-[28px] md:text-[40px] lg:text-[50px] font-extrabold leading-tight text-white">
-            <span className="text-white">HI, I'M</span> <span className="text-[#357BC9]">MUHAMMAD RAFLY ROMEO NASUTION!</span> <span className="text-white">AND I'M A</span>
+            <span className="text-white">HI, I AM</span> <span className="text-[#357BC9]">MUHAMMAD RAFLY ROMEO NASUTION!</span> <span className="text-white">AND I AM A</span>
           </h1>
           <TextEffect />
           <p data-aos="fade-up" className="mt-3 text-sm sm:text-base md:text-lg text-[#ffffffb3]">
