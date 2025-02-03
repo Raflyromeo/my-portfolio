@@ -3,6 +3,7 @@ import React from "react";
 interface Props {
   nav: boolean;
   handleNavClick: (id: string) => void;
+  closeNav: () => void; // Add this line to accept closeNav prop
 }
 
 const MobileNav = ({ nav, handleNavClick }: Props) => {

@@ -1,8 +1,8 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import MobileNav from "./MobileNav";
 import Image from "next/image";
+import MobileNav from "./MobileNav"; // Only import it once
 
 interface Props {
   openNav: () => void;
@@ -42,17 +42,21 @@ const Nav = ({ openNav, closeNav, nav }: Props) => {
       }`}
     >
       <div className="flex items-center justify-between w-[80%] mx-auto h-full relative">
-      <Image
-        src="/images/myportofolio.png"
-        alt="My Portfolio"
-        width={200}
-        height={80}
-        className="flex-[0.1] cursor-pointer h-auto max-h-full"
-        onClick={() => handleNavClick("#home")} // Tambahkan event onClick
-      />
+        <Image
+          src="/images/myportofolio.png"
+          alt="My Portfolio"
+          width={200}
+          height={80}
+          className="flex-[0.1] cursor-pointer h-auto max-h-full"
+          onClick={() => handleNavClick("#home")} // Event onClick
+        />
         <div className="hidden md:flex space-x-6">
           {["home", "about", "my-skills", "experience", "project", "blog", "contact"].map((section) => (
-            <button key={section} onClick={() => handleNavClick(`#${section}`)} className="nav-link">
+            <button
+              key={section}
+              onClick={() => handleNavClick(`#${section}`)}
+              className="nav-link"
+            >
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </button>
           ))}
@@ -85,7 +89,11 @@ const Nav = ({ openNav, closeNav, nav }: Props) => {
           </AnimatePresence>
         </div>
       </div>
-      <MobileNav nav={nav} handleNavClick={handleNavClick} />
+
+      {/* Conditional rendering of MobileNav */}
+      <MobileNav nav={nav} handleNavClick={handleNavClick} closeNav={function (): void {
+        throw new Error("Function not implemented.");
+      } } />
     </div>
   );
 };

@@ -11,7 +11,6 @@ import React, { useEffect, useState } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Contact from "@/Components/Contact";
-import Image from "next/image";
 
 const HomePage: React.FC = () => {
   const [nav, setNav] = useState(false);
@@ -34,7 +33,9 @@ const HomePage: React.FC = () => {
     <div className="overflow-x-hidden">
       {/* Navbar */}
       <Nav openNav={toggleNav} closeNav={toggleNav} nav={nav} />
-      <MobileNav nav={nav} closeNav={toggleNav} handleNavClick={() => {}} />
+      <MobileNav nav={nav} closeNav={toggleNav} handleNavClick={function (): void {
+        throw new Error("Function not implemented.");
+      } } />
 
       {/* Hero Section */}
       <section id="home">
