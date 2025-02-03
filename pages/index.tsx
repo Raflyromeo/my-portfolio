@@ -1,3 +1,4 @@
+import About from "@/Components/About";
 import Blog from "@/Components/Blog";
 import Experience from "@/Components/Experience";
 import Footer from "@/Components/Footer";
@@ -10,20 +11,11 @@ import React, { useEffect, useState } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Contact from "@/Components/Contact";
-import About from "@/Components/About";
+import Image from "next/image";
 
 const HomePage: React.FC = () => {
   const [nav, setNav] = useState(false);
   const toggleNav = () => setNav(!nav);
-
-  // Function to handle navigation clicks
-  const handleNavClick = (id: string) => {
-    const section = document.querySelector(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-      toggleNav(); // Close menu after click
-    }
-  };
 
   // Animation AOS setup
   useEffect(() => {
@@ -36,13 +28,13 @@ const HomePage: React.FC = () => {
       mirror: false,
       anchorPlacement: 'top-bottom',
     });
-  }, []);
+  },[]);
 
   return (
     <div className="overflow-x-hidden">
       {/* Navbar */}
       <Nav openNav={toggleNav} closeNav={toggleNav} nav={nav} />
-      <MobileNav nav={nav} closeNav={toggleNav} handleNavClick={handleNavClick} />
+      <MobileNav nav={nav} closeNav={toggleNav} handleNavClick={() => {}} />
 
       {/* Hero Section */}
       <section id="home">
