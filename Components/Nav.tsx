@@ -1,7 +1,6 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import MobileNav from "./MobileNav"; // Only import it once
 
 interface Props {
@@ -43,15 +42,10 @@ const Nav = ({ openNav, closeNav, nav }: Props) => {
       }`}
     >
       <div className="flex items-center justify-between w-[80%] mx-auto h-full relative">
-        <Image
-          src="/images/myportofolio.png"
-          alt="My Portfolio"
-          width={200} // Fixed width
-          height={80} // Fixed height
-          className="flex-[0.1] cursor-pointer" // Removed w-auto and h-auto to maintain aspect ratio
-          onClick={() => handleNavClick("#home")}
-          priority // Add this to prioritize loading
-        />
+        {/* Removed Image Component */}
+        <div onClick={() => handleNavClick("#home")} className="flex-[0.1] cursor-pointer text-white font-bold text-xl"> {/* Placeholder for Logo */}
+          My Portfolio {/* Or replace with your actual logo component */}
+        </div>
         <div className="hidden md:flex space-x-6">
           {["home", "about", "my-skills", "experience", "project", "blog", "contact"].map((section) => (
             <button

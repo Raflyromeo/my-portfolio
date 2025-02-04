@@ -5,42 +5,36 @@ const blogs = [
   {
     title: "Kemajuan Teknologi Komputer Di Masa Depan",
     url: "https://muhammadraflyromeonasution6.wordpress.com/2023/10/07/the-art-of-connection/",
-    image: "/images/kemajuan.png",
     author: "raflyromeo",
     date: "7 Oktober 2023",
   },
   {
     title: "Pemanfaatan Teknologi Komputer Di 3 Bidang",
     url: "https://muhammadraflyromeonasution6.wordpress.com/2023/10/07/pemanfaatan-teknologi-komputer-di-3-bidang/",
-    image: "/images/pemanfaatan.jpg",
     author: "raflyromeo",
     date: "7 Oktober 2023",
   },
   {
     title: "Berbagai Macam Alat Atau Aplikasi AI Yang Ada Pada Saat Ini",
     url: "https://muhammadraflyromeonasution6.wordpress.com/2024/01/02/berbagai-macam-alat-atau-aplikasi-ai-yang-ada-pada-saat-ini/",
-    image: "/images/ai.png",
     author: "raflyromeo",
     date: "2 Januari 2024",
   },
   {
     title: "Mac OS Sistem Operasi Yang Inovasi Dan Komprehensif",
     url: "https://muhammadraflyromeonasution6.wordpress.com/2024/01/16/mac-os-sistem-operasi-yang-inovasi-dan-komprehensif/",
-    image: "/images/MacOS.jpeg",
     author: "raflyromeo",
     date: "16 Januari 2024",
   },
   {
     title: "Blog Title Placeholder",
     url: "#",
-    image: "/images/NotAvailable.jpg",
     author: "Unknown",
     date: "TBD",
   },
   {
     title: "Blog Title Placeholder",
     url: "#",
-    image: "/images/NotAvailable.jpg",
     author: "Unknown",
     date: "TBD",
   },
@@ -58,13 +52,6 @@ const Blog = () => {
             key={index}
             className="bg-[#1c2533] p-5 rounded-2xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-[#1c2533]"
           >
-            {/* Gambar Blog dengan fallback alt text */}
-            <div
-              className="w-full h-64 bg-cover bg-center rounded-xl transition duration-300 hover:brightness-90"
-              style={{ backgroundImage: `url(${blog.image})` }}
-              aria-label={`Image for ${blog.title}`}
-            ></div>
-
             {/* Konten Blog */}
             <div className="mt-5">
               <span className="text-gray-400 text-sm">{blog.date}</span>
