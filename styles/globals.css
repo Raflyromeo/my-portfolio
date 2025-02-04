@@ -4,11 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definisikan font untuk seluruh body */
-body {
-  font-family: 'Inter', sans-serif; /* Pastikan font diterapkan di body */
-}
-
 @layer components {
   .nav-link {
     @apply relative font-bold text-white cursor-pointer text-[17px] w-fit md:block hidden 
@@ -26,8 +21,8 @@ body {
       active:text-[#357BC9] mb-0; /* Pastikan tidak ada margin bawah tambahan */
   }
 
-  .heading {
-    @apply text-center text-white text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase;
+  .heading{
+    @apply text-center text-white text-[28px] sm:text-[33px] md:text-[45px] font-bold uppercase
   }
 }
 
